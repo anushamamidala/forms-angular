@@ -1,0 +1,71 @@
+<div class="container">
+    <div *ngIf="!submitted">
+      <h1>User Registration using template driven form</h1>
+      <form #registrationForm="ngForm">
+        <div class="form-group m-3">
+          <input type="text" class="form-control" id="name"
+                 required placeholder="Full Name"
+                 [(ngModel)]="model.name" name="name"
+                 #name="ngModel">
+        </div>
+  
+        <div class="form-group m-3">
+            <input type="text" class="form-control" id="email"
+                   required placeholder="Email"
+                   [(ngModel)]="model.email" name="email"
+                   #email="ngModel">
+          </div>
+
+          <div class="form-group m-3">
+            <input type="text" class="form-control" id="phoneNo"
+                   required placeholder="Phone Number"
+                   [(ngModel)]="model.phoneNo" name="phoneNo"
+                   #phoneNo="ngModel">
+          </div>
+          <div class="form-group m-3">
+            <input type="password" class="form-control" id="password"
+                   required placeholder="Password"
+                   [(ngModel)]="model.password" name="password"
+                   #password="ngModel">
+          </div>
+          <div class="form-group m-3">
+            <input type="password" class="form-control" id="confirmPassword"
+                   required placeholder="Confirm Password"
+                   [(ngModel)]="model.confirmPassword" name="confirmPassword"
+                   #confirmPassword="ngModel">
+          </div>
+          <div class="form-group m-3">
+            <input type="checkbox" class="form-control" id="terms"
+                   required
+                   [(ngModel)]="model.terms" name="terms"
+                   #terms="ngModel"> Agree to the Terms & Conditions
+          </div>
+
+        <button type="submit" class="btn btn-primary m-3" [disabled]="!registrationForm.form.valid" (click)="onSubmit()">Sign Up</button>
+      </form>
+    </div>
+  
+    <div *ngIf="submitted">
+      <h2>You submitted the following:</h2>
+      <div class="row">
+        <div class="col-3">Name</div>
+        <div class="col-9">{{ model.name }}</div>
+      </div>
+      <div class="row">
+        <div class="col-3">Email</div>
+        <div class="col-9">{{ model.email }}</div>
+      </div>
+      <div class="row">
+        <div class="col-3">phoneNo</div>
+        <div class="col-9">{{ model.phoneNo }}</div>
+      </div>
+      <div class="row">
+        <div class="col-3">password</div>
+        <div class="col-9">{{ model.password }}</div>
+      </div>
+      <div class="row">
+        <div class="col-3">confirmPassword</div>
+        <div class="col-9">{{ model.confirmPassword }}</div>
+      </div>
+    </div>
+  </div>
