@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './user';
 
+
 @Component({
   selector: 'app-template-form',
   templateUrl: './template-form.component.html',
@@ -10,7 +11,7 @@ export class TemplateFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-model:User = new User('','','','','',false);
+model: any = {};
 initialLoad = true;
 submitted = false;
 
