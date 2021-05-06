@@ -6,6 +6,7 @@
           <input type="text" class="form-control" id="name"
                  required placeholder="Full Name"
                  [(ngModel)]="model.name" name="name"
+                 [ngClass]="(name.touched || registerForm.submitted) && name.errors?.required === true ? 'is-invalid' : ''"
                  #name="ngModel">
         </div>
   
@@ -35,7 +36,7 @@
                    #confirmPassword="ngModel">
           </div>
           <div class="form-group m-3">
-            <input type="checkbox" class="form-control" id="terms"
+            <input type="checkbox"  id="terms"
                    required
                    [(ngModel)]="model.terms" name="terms"
                    #terms="ngModel"> Agree to the Terms & Conditions
