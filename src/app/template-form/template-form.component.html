@@ -5,15 +5,14 @@
               <h3>User Registration using Template Driven Form</h3>
               <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
                   <div class="form-group">
-                      <label for="firstName">First Name</label>
-                      <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
-                      <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
-                          <div *ngIf="firstName.errors.required">First Name is required</div>
+                      <input type="text" class="form-control" name="fullName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
+                      <div *ngIf="f.submitted && fullName.invalid" class="invalid-feedback">
+                          <div *ngIf="fullName.errors.required"> Name is required</div>
                       </div>
                   </div>
                   <div class="form-group">
-                      <label for="lastName">Last Name</label>
-                      <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required />
+                     
+                      <input type="text" class="form-control" name="phoneNo" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required />
                       <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
                           <div *ngIf="lastName.errors.required">Last Name is required</div>
                       </div>
